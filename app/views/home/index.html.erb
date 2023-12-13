@@ -1,0 +1,15 @@
+<h1>Home#index</h1>
+<%if current_user %>
+    <h3>User: <%= current_user.email %></h3>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete%>
+<%end%>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<h3>Here are users you can follow</h3>
+
+
+<% @users.each do |user|%>
+    <div>
+        <%= user.email %></br>
+    </div>
+<%end%>
